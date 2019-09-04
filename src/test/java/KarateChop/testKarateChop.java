@@ -191,4 +191,82 @@ public class testKarateChop {
         Assert.assertEquals(-1, karateChop.chop7(6, arrayLengthFour));
         Assert.assertEquals(-1, karateChop.chop7(8, arrayLengthFour));
     }
+
+    @Test
+    public void testChop8() {
+        Assert.assertEquals(-1, karateChop.chop8(3, arrayLengthZero));
+
+        Assert.assertEquals(-1, karateChop.chop8(3, arrayLengthOne));
+        Assert.assertEquals(0, karateChop.chop8(1, arrayLengthOne));
+
+        Assert.assertEquals(0, karateChop.chop8(1, arrayLengthThree));
+        Assert.assertEquals(1, karateChop.chop8(3, arrayLengthThree));
+        Assert.assertEquals(2, karateChop.chop8(5, arrayLengthThree));
+        Assert.assertEquals(-1, karateChop.chop8(0, arrayLengthThree));
+        Assert.assertEquals(-1, karateChop.chop8(2, arrayLengthThree));
+        Assert.assertEquals(-1, karateChop.chop8(4, arrayLengthThree));
+        Assert.assertEquals(-1, karateChop.chop8(6, arrayLengthThree));
+
+        Assert.assertEquals(0, karateChop.chop8(1, arrayLengthFour));
+        Assert.assertEquals(1, karateChop.chop8(3, arrayLengthFour));
+        Assert.assertEquals(2, karateChop.chop8(5, arrayLengthFour));
+        Assert.assertEquals(3, karateChop.chop8(7, arrayLengthFour));
+        Assert.assertEquals(-1, karateChop.chop8(0, arrayLengthFour));
+        Assert.assertEquals(-1, karateChop.chop8(2, arrayLengthFour));
+        Assert.assertEquals(-1, karateChop.chop8(4, arrayLengthFour));
+        Assert.assertEquals(-1, karateChop.chop8(6, arrayLengthFour));
+        Assert.assertEquals(-1, karateChop.chop8(8, arrayLengthFour));
+    }
+
+    @Test
+    public void testChop9() {
+        Assert.assertEquals(-1, karateChop.chop9(3, arrayLengthZero));
+
+        Assert.assertEquals(-1, karateChop.chop9(3, arrayLengthOne));
+        Assert.assertEquals(0, karateChop.chop9(1, arrayLengthOne));
+
+        Assert.assertEquals(0, karateChop.chop9(1, arrayLengthThree));
+        Assert.assertEquals(1, karateChop.chop9(3, arrayLengthThree));
+        Assert.assertEquals(2, karateChop.chop9(5, arrayLengthThree));
+        Assert.assertEquals(-1, karateChop.chop9(0, arrayLengthThree));
+        Assert.assertEquals(-1, karateChop.chop9(2, arrayLengthThree));
+        Assert.assertEquals(-1, karateChop.chop9(4, arrayLengthThree));
+        Assert.assertEquals(-1, karateChop.chop9(6, arrayLengthThree));
+
+        Assert.assertEquals(0, karateChop.chop9(1, arrayLengthFour));
+        Assert.assertEquals(1, karateChop.chop9(3, arrayLengthFour));
+        Assert.assertEquals(2, karateChop.chop9(5, arrayLengthFour));
+        Assert.assertEquals(3, karateChop.chop9(7, arrayLengthFour));
+        Assert.assertEquals(-1, karateChop.chop9(0, arrayLengthFour));
+        Assert.assertEquals(-1, karateChop.chop9(2, arrayLengthFour));
+        Assert.assertEquals(-1, karateChop.chop9(4, arrayLengthFour));
+        Assert.assertEquals(-1, karateChop.chop9(6, arrayLengthFour));
+        Assert.assertEquals(-1, karateChop.chop9(8, arrayLengthFour));
+    }
+
+    @Test
+    public void testChop10() {
+        Assert.assertEquals(-1, karateChop.chop10(3, arrayLengthZero));
+
+        Assert.assertEquals(-1, karateChop.chop10(3, arrayLengthOne));
+        Assert.assertEquals(0, karateChop.chop10(1, arrayLengthOne));
+
+        Assert.assertEquals(0, karateChop.chop10(1, arrayLengthThree));
+        Assert.assertEquals(1, karateChop.chop10(3, arrayLengthThree));
+        Assert.assertEquals(2, karateChop.chop10(5, arrayLengthThree));
+        Assert.assertEquals(-1, karateChop.chop10(0, arrayLengthThree));
+        Assert.assertEquals(-1, karateChop.chop10(2, arrayLengthThree));
+        Assert.assertEquals(-1, karateChop.chop10(4, arrayLengthThree));
+        Assert.assertEquals(-1, karateChop.chop10(6, arrayLengthThree));
+
+        Assert.assertEquals(0, karateChop.chop10(1, arrayLengthFour));
+        Assert.assertEquals(1, karateChop.chop10(3, arrayLengthFour));
+        Assert.assertEquals(2, karateChop.chop10(5, arrayLengthFour));
+        Assert.assertEquals(3, karateChop.chop10(7, arrayLengthFour));
+        Assert.assertEquals(-1, karateChop.chop10(0, arrayLengthFour));
+        Assert.assertEquals(-1, karateChop.chop10(2, arrayLengthFour));
+        Assert.assertEquals(-1, karateChop.chop10(4, arrayLengthFour));
+        Assert.assertEquals(-1, karateChop.chop10(6, arrayLengthFour));
+        Assert.assertEquals(-1, karateChop.chop10(8, arrayLengthFour));
+    }
 }

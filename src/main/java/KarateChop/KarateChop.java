@@ -1,6 +1,8 @@
 package KarateChop;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class KarateChop {
 
@@ -35,6 +37,7 @@ public class KarateChop {
         return binarySearch(sortedArray, 0, sortedArray.length - 1, value);
     }
 
+    //recursion
     private int binarySearch(int arr[], int left, int right, int value) {
         if (right >= left) {
             int mid = left + (right - left) / 2;
@@ -83,6 +86,7 @@ public class KarateChop {
         return binarySearchLibrary(value, sortedArray);
     }
 
+    //library
     private int binarySearchLibrary(int value, int[] sortedArray) {
         if (Arrays.binarySearch(sortedArray, value) < 0) {
             return -1;
@@ -90,40 +94,108 @@ public class KarateChop {
         return Arrays.binarySearch(sortedArray, value);
     }
 
+    //using lambda expression
     public int chop6(int value, int[] sortedArray) {
-        Search iterativeSearch = (int v, int[] arr) -> {
-            for (int index = 0; index < arr.length; index++) {
-                if (v == arr[index]) {
-                    return index;
-                }
+        Search iterativeSearch = (int[] arr, int left, int right) -> {
+            if (right >= left) {
+                int mid = left + (right - left) / 2;
+                if (arr[mid] == value)
+                    return mid;
+                if (arr[mid] > value)
+                    return binarySearch(arr, left, mid - 1, value);
+                return binarySearch(arr, mid + 1, right, value);
             }
             return -1;
         };
-        return iterativeSearch.search(value, sortedArray);
+        return iterativeSearch.search(sortedArray, 0, sortedArray.length - 1);
     }
 
     public int chop7(int value, int[] sortedArray) {
-        return binarySearchWithArraySlicingRecursion(value, sortedArray);
+        return binarySearchWithArraySlicingRecursion(value, sortedArray, 0);
     }
 
-    private int binarySearchWithArraySlicingRecursion(int value, int[] sortedArray) {
+    //array slicing
+    private int binarySearchWithArraySlicingRecursion(int value, int[] sortedArray, int mid) {
         if (sortedArray.length <= 0) {
             return -1;
         }
-        int mid = sortedArray.length / 2;
+        mid = sortedArray.length / 2;
         if (sortedArray[mid] == value) {
             return mid;
         } else if (sortedArray[mid] < value && mid + 1 <= sortedArray.length - 1) {
-            binarySearchWithArraySlicingRecursion(value, Arrays.copyOfRange(sortedArray, mid + 1, sortedArray.length - 1));
+            int[] temp = Arrays.copyOfRange(sortedArray, mid, sortedArray.length);
+            int returnValue = binarySearchWithArraySlicingRecursion(value, temp, mid);
+            if (returnValue != -1) {
+                return mid + returnValue;
+            } else {
+                return -1;
+            }
         } else if (sortedArray[mid] > value && mid - 1 >= 0) {
-            binarySearchWithArraySlicingRecursion(value, Arrays.copyOfRange(sortedArray, 0, mid - 1));
+            return binarySearchWithArraySlicingRecursion(value, Arrays.copyOf(sortedArray, mid), 0);
+        }
+        return -1;
+    }
+
+    public int chop8(int value, int[] sortedArray) {
+        return binarySearchWithForLoop(sortedArray, value);
+    }
+
+    // For loop
+    private int binarySearchWithForLoop(int[] array, int value) {
+        int left = 0;
+        int right = array.length - 1;
+
+        for (int i = 0; i < array.length; i++) {
+            int middle = (right - left) / 2;
+            if (array[i] == value) {
+                return i;
+            } else if (array[middle] > value) {
+                right = middle - 1;
+            } else {
+                left = middle + 1;
+            }
+        }
+        return -1;
+    }
+
+
+    public int chop9(int value, int[] sortedArray) {
+        return convertingIntoList(sortedArray, value);
+    }
+
+    //Converting Array into List and using functions of List Interface
+    private int convertingIntoList(int[] array, int value) {
+        List<Integer> list = Arrays.stream(array).boxed().collect(Collectors.toList());
+        if (list.contains(value)) {
+            return list.indexOf(value);
+        }
+        return -1;
+
+    }
+
+
+    public int chop10(int value, int[] sortedArray) {
+        return binarySearchWithWhileLoop(sortedArray, value);
+    }
+
+    //While loop
+    private int binarySearchWithWhileLoop(int[] sortedArray, int value) {
+        int start = 0;
+        int end = sortedArray.length - 1;
+
+        while (start <= end) {
+            int middle = start + (end - start) / 2;
+            if (sortedArray[middle] == value) {
+                return middle;
+            } else if (sortedArray[middle] > value) {
+                end = middle - 1;
+            } else start = middle + 1;
         }
         return -1;
     }
 
     @FunctionalInterface
     interface Search {
-        int search(int value, int[] sortedArray);
+        int search(int[] sortedArray, int left, int right);
     }
-
 }
