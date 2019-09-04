@@ -166,29 +166,4 @@ public class testKarateChop {
         Assert.assertEquals(-1, karateChop.chop6(8, arrayLengthFour));
     }
 
-    @Test
-    public void testChop7() {
-        Assert.assertEquals(-1, karateChop.chop7(3, arrayLengthZero));
-
-        Assert.assertEquals(-1, karateChop.chop7(3, arrayLengthOne));
-        Assert.assertEquals(0, karateChop.chop7(1, arrayLengthOne));
-
-        Assert.assertEquals(0, karateChop.chop7(1, arrayLengthThree));
-        Assert.assertEquals(1, karateChop.chop7(3, arrayLengthThree));
-        Assert.assertEquals(2, karateChop.chop7(5, arrayLengthThree));
-        Assert.assertEquals(-1, karateChop.chop7(0, arrayLengthThree));
-        Assert.assertEquals(-1, karateChop.chop7(2, arrayLengthThree));
-        Assert.assertEquals(-1, karateChop.chop7(4, arrayLengthThree));
-        Assert.assertEquals(-1, karateChop.chop7(6, arrayLengthThree));
-
-        Assert.assertEquals(0, karateChop.chop7(1, arrayLengthFour));
-        Assert.assertEquals(1, karateChop.chop7(3, arrayLengthFour));
-        Assert.assertEquals(2, karateChop.chop7(5, arrayLengthFour));
-        Assert.assertEquals(3, karateChop.chop7(7, arrayLengthFour));
-        Assert.assertEquals(-1, karateChop.chop7(0, arrayLengthFour));
-        Assert.assertEquals(-1, karateChop.chop7(2, arrayLengthFour));
-        Assert.assertEquals(-1, karateChop.chop7(4, arrayLengthFour));
-        Assert.assertEquals(-1, karateChop.chop7(6, arrayLengthFour));
-        Assert.assertEquals(-1, karateChop.chop7(8, arrayLengthFour));
-    }
 }

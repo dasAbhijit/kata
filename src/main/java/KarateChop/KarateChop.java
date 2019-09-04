@@ -102,25 +102,6 @@ public class KarateChop {
         return iterativeSearch.search(value, sortedArray);
     }
 
-    public int chop7(int value, int[] sortedArray) {
-        return binarySearchWithArraySlicingRecursion(value, sortedArray);
-    }
-
-    private int binarySearchWithArraySlicingRecursion(int value, int[] sortedArray) {
-        if (sortedArray.length <= 0) {
-            return -1;
-        }
-        int mid = sortedArray.length / 2;
-        if (sortedArray[mid] == value) {
-            return mid;
-        } else if (sortedArray[mid] < value && mid + 1 <= sortedArray.length - 1) {
-            binarySearchWithArraySlicingRecursion(value, Arrays.copyOfRange(sortedArray, mid + 1, sortedArray.length - 1));
-        } else if (sortedArray[mid] > value && mid - 1 >= 0) {
-            binarySearchWithArraySlicingRecursion(value, Arrays.copyOfRange(sortedArray, 0, mid - 1));
-        }
-        return -1;
-    }
-
     @FunctionalInterface
     interface Search {
         int search(int value, int[] sortedArray);
