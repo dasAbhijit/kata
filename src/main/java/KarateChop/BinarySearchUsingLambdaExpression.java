@@ -7,7 +7,7 @@ public class BinarySearchUsingLambdaExpression implements IBinarySearch {
     }
 
     private int searchWithLambdaExpression(int value, int[] sortedArray) {
-        BinaryRecursiveSearch binaryRecursiveSearch = new BinaryRecursiveSearch();
+        BinarySearchUsingRecursion binaryRecursiveSearch = new BinarySearchUsingRecursion();
         Search iterativeSearch = (int[] arr, int left, int right) -> {
             if (right >= left) {
                 int mid = left + (right - left) / 2;

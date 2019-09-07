@@ -1,6 +1,6 @@
 package KarateChop;
 
-public class BinaryRecursiveSearch implements IBinarySearch {
+public class BinarySearchUsingRecursion implements IBinarySearch {
     @Override
     public int search(int value, int[] sortedArray) {
         return binaryRecursiveSearch(sortedArray, 0, sortedArray.length - 1, value);

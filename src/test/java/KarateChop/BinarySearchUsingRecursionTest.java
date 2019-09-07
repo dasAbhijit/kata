@@ -3,7 +3,7 @@ package KarateChop;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class BinaryRecursiveSearchTest {
+public class BinarySearchUsingRecursionTest {
     IBinarySearch iBinarySearch;
     private int[] arrayLengthZero = {};
     private int[] arrayLengthOne = {1};
@@ -12,7 +12,7 @@ public class BinaryRecursiveSearchTest {
 
     @Test
     public void binaryRecursiveSearchTest() {
-        iBinarySearch = new BinaryRecursiveSearch();
+        iBinarySearch = new BinarySearchUsingRecursion();
 
         Assert.assertEquals(-1, iBinarySearch.search(3, arrayLengthZero));
 
