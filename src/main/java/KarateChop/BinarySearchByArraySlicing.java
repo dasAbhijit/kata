@@ -15,7 +15,7 @@ public class BinarySearchByArraySlicing implements IBinarySearch {
         mid = sortedArray.length / 2;
         if (sortedArray[mid] == value) {
             return mid;
-        } else if (sortedArray[mid] < value && mid + 1 <= sortedArray.length - 1) {
+        } else if (occursInSecondPart(value, sortedArray, mid)) {
             int[] temp = Arrays.copyOfRange(sortedArray, mid, sortedArray.length);
             int returnValue = binarySearchWithArraySlicingRecursion(value, temp, mid);
             if (returnValue != -1) {
@@ -23,9 +23,17 @@ public class BinarySearchByArraySlicing implements IBinarySearch {
             } else {
                 return -1;
             }
-        } else if (sortedArray[mid] > value && mid - 1 >= 0) {
+        } else if (occursInFirstPart(value, sortedArray, mid)) {
             return binarySearchWithArraySlicingRecursion(value, Arrays.copyOf(sortedArray, mid), 0);
         }
         return -1;
+    }
+
+    private boolean occursInFirstPart(int value, int[] sortedArray, int mid) {
+        return sortedArray[mid] > value && mid - 1 >= 0;
+    }
+
+    private boolean occursInSecondPart(int value, int[] sortedArray, int mid) {
+        return sortedArray[mid] < value && mid + 1 <= sortedArray.length - 1;
     }
 }
