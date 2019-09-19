@@ -13,7 +13,7 @@ public class BinarySearchWithForLoopTest {
 
     @Test
     public void binarySearchWithForLoopTest() {
-        iBinarySearch = new BinarySearchUsingRecursion();
+        iBinarySearch = new BinarySearchWithForLoop();
 
         Assert.assertEquals(-1, iBinarySearch.search(3, arrayLengthZero));
 
