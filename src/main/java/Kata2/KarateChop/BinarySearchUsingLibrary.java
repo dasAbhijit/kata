@@ -1,4 +1,4 @@
-package KarateChop;
+package Kata2.KarateChop;
 
 import java.util.Arrays;
 

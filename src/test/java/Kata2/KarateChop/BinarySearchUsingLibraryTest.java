@@ -1,9 +1,9 @@
-package KarateChop;
+package Kata2.KarateChop;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-public class BinarySearchUsingLambdaExpressionTest {
+public class BinarySearchUsingLibraryTest {
 
     IBinarySearch iBinarySearch;
     private int[] arrayLengthZero = {};
@@ -12,8 +12,8 @@ public class BinarySearchUsingLambdaExpressionTest {
     private int[] arrayLengthFour = {1, 3, 5, 7};
 
     @Test
-    public void binarySearchUsingLambdaExpressionTest() {
-        iBinarySearch = new BinarySearchUsingLambdaExpression();
+    public void binarySearchUsingLibraryTest() {
+        iBinarySearch = new BinarySearchUsingLibrary();
 
         Assert.assertEquals(-1, iBinarySearch.search(3, arrayLengthZero));
 

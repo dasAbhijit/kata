@@ -1,9 +1,10 @@
-package KarateChop;
+package Kata2.KarateChop;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-public class BinarySearchUsingRecursionTest {
+public class BinarySearchUsingLambdaExpressionTest {
+
     IBinarySearch iBinarySearch;
     private int[] arrayLengthZero = {};
     private int[] arrayLengthOne = {1};
@@ -11,8 +12,8 @@ public class BinarySearchUsingRecursionTest {
     private int[] arrayLengthFour = {1, 3, 5, 7};
 
     @Test
-    public void binaryRecursiveSearchTest() {
-        iBinarySearch = new BinarySearchUsingRecursion();
+    public void binarySearchUsingLambdaExpressionTest() {
+        iBinarySearch = new BinarySearchUsingLambdaExpression();
 
         Assert.assertEquals(-1, iBinarySearch.search(3, arrayLengthZero));
 
@@ -36,5 +37,4 @@ public class BinarySearchUsingRecursionTest {
         Assert.assertEquals(-1, iBinarySearch.search(6, arrayLengthFour));
         Assert.assertEquals(-1, iBinarySearch.search(8, arrayLengthFour));
     }
-
 }

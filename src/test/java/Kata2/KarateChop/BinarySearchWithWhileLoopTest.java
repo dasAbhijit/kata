@@ -1,9 +1,9 @@
-package KarateChop;
+package Kata2.KarateChop;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-public class BinarySearchWithForLoopTest {
+public class BinarySearchWithWhileLoopTest {
 
     IBinarySearch iBinarySearch;
     private int[] arrayLengthZero = {};
@@ -12,8 +12,8 @@ public class BinarySearchWithForLoopTest {
     private int[] arrayLengthFour = {1, 3, 5, 7};
 
     @Test
-    public void binarySearchWithForLoopTest() {
-        iBinarySearch = new BinarySearchWithForLoop();
+    public void binarySearchWithWhileLoopTest() {
+        iBinarySearch = new BinarySearchWithWhileLoop();
 
         Assert.assertEquals(-1, iBinarySearch.search(3, arrayLengthZero));
 

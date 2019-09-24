@@ -1,4 +1,4 @@
-package KarateChop;
+package Kata2.KarateChop;
 
 public class BinarySearchUsingLambdaExpression implements IBinarySearch {
     @Override
