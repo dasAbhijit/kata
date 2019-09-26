@@ -18,7 +18,7 @@ public class Weather {
         short count = 1;
         for (String line : lines) {
             if (count > 2) {
-                int tempDiffNew = Integer.parseInt(line.substring(6, 8).trim()) - Integer.parseInt(line.substring(12, 14).trim());
+                int tempDiffNew = Math.abs(Integer.parseInt(line.substring(6, 8).trim()) - Integer.parseInt(line.substring(12, 14).trim()));
                 if (tempDiffNew < tempDiff) {
                     tempDiff = tempDiffNew;
                     serialNo = Integer.parseInt(line.substring(2, 4).trim());

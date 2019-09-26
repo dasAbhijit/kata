@@ -19,24 +19,18 @@ public class SoccerLeague {
         for (String line : lines) {
             try {
                 int forGoal = Integer.parseInt(line.substring(43, 45));
-                int againstGoal = Integer.parseInt(line.substring(51, 52));
-                if (forGoal > againstGoal) {
-                    if (forGoal - againstGoal < goalDIff) {
-                        goalDIff = forGoal - againstGoal;
-                        teamName = line.substring(7, 21);
-                    }
-                } else {
-                    if (againstGoal - forGoal < goalDIff) {
-                        goalDIff = againstGoal - forGoal;
-                        teamName = line.substring(7, 21);
-                    }
+                int againstGoal = Integer.parseInt(line.substring(50, 52));
+                if (Math.abs(forGoal - againstGoal) < goalDIff) {
+                    goalDIff = Math.abs(forGoal - againstGoal);
+                    teamName = line.substring(7, 21);
                 }
-            }catch (NumberFormatException e){
+
+            } catch (NumberFormatException e) {
 
             }
             count++;
         }
-        return teamName;
+        return teamName.trim();
     }
 
 }
